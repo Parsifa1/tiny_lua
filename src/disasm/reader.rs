@@ -1,4 +1,4 @@
-use crate::vm::chunk::*;
+use crate::disasm::chunk::*;
 pub struct Reader {
     data: Vec<u8>,
 }

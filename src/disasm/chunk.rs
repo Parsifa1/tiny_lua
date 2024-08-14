@@ -1,5 +1,5 @@
 #![allow(dead_code)]
-use crate::vm::reader::Reader;
+use crate::disasm::reader::Reader;
 use core::fmt;
 
 // binary_chunk 常量定义
@@ -167,6 +167,9 @@ impl fmt::Display for Prototype {
         self.write_header(f)?;
         self.write_code(f)?;
         self.write_detail(f)?;
+        for p in self.protos.iter() {
+            p.fmt(f)?;
+        }
         Ok(())
     }
 }

@@ -1,6 +1,7 @@
+mod disasm;
 mod vm;
 
-use crate::vm::chunk::undump;
+use crate::disasm::chunk::undump;
 use std::env;
 
 fn main() {
@@ -15,8 +16,8 @@ fn main() {
 
 #[test]
 fn check() {
-    use crate::vm::chunk::*;
-    use crate::vm::reader::Reader;
+    use crate::disasm::chunk::*;
+    use crate::disasm::reader::Reader;
     let args: Vec<String> = env::args().collect();
     if args.len() > 1 {
         let file_name = &args[1];

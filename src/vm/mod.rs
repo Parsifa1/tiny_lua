@@ -1,2 +1,1 @@
-pub mod chunk;
-pub mod reader;
+mod opcodes;
